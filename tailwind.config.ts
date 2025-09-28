@@ -27,6 +27,10 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        tertiary: {
+          DEFAULT: "hsl(var(--tertiary))",
+          foreground: "hsl(var(--tertiary-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -63,27 +67,69 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundImage: {
+        'gradient-cosmic': 'var(--gradient-cosmic)',
+        'gradient-neural': 'var(--gradient-neural)',
+        'gradient-aurora': 'var(--gradient-aurora)',
+      },
+      boxShadow: {
+        'glow': 'var(--glow-primary)',
+        'glow-secondary': 'var(--glow-secondary)',
+        'glow-intense': 'var(--glow-intense)',
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "cosmic-drift": {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "25%": { transform: "translate(1px, -2px) rotate(0.5deg)" },
+          "50%": { transform: "translate(-1px, 2px) rotate(-0.5deg)" },
+          "75%": { transform: "translate(2px, 1px) rotate(0.2deg)" },
+        },
+        "neural-pulse": {
+          "0%, 100%": { 
+            boxShadow: "var(--glow-primary)",
+            transform: "scale(1)"
           },
-          to: {
-            height: "0",
+          "50%": { 
+            boxShadow: "var(--glow-intense)",
+            transform: "scale(1.02)"
           },
+        },
+        "data-flow": {
+          "0%": { transform: "translateX(-100%) translateY(0)", opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { transform: "translateX(100vw) translateY(-20px)", opacity: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(180deg)" },
+        },
+        "hologram": {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cosmic-drift": "cosmic-drift 8s ease-in-out infinite",
+        "neural-pulse": "neural-pulse 2s ease-in-out infinite",
+        "data-flow": "data-flow 3s linear infinite",
+        "float": "float 6s ease-in-out infinite",
+        "hologram": "hologram 2s linear infinite",
+        "fade-in": "fade-in 0.6s ease-out",
       },
     },
   },

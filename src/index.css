@@ -2,39 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Cloud Space - Futuristic Design System
+Cosmic dark theme with neon accents and brain-inspired elements
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic Background Colors */
+    --background: 221 47% 3%;
+    --foreground: 203 100% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass-morphic Cards */
+    --card: 221 47% 6%;
+    --card-foreground: 203 100% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popovers & Dropdowns */
+    --popover: 221 47% 8%;
+    --popover-foreground: 203 100% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Neon Electric Blue Primary */
+    --primary: 203 100% 60%;
+    --primary-foreground: 221 47% 3%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Purple Secondary Accent */
+    --secondary: 267 85% 60%;
+    --secondary-foreground: 221 47% 3%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Teal Tertiary */
+    --tertiary: 180 100% 50%;
+    --tertiary-foreground: 221 47% 3%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Elements */
+    --muted: 221 47% 12%;
+    --muted-foreground: 203 50% 70%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Accent (Purple) */
+    --accent: 267 85% 60%;
+    --accent-foreground: 221 47% 3%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive (Red Neon) */
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 221 47% 3%;
+
+    /* Borders & Inputs with Glow */
+    --border: 203 100% 20%;
+    --input: 221 47% 8%;
+    --ring: 203 100% 60%;
 
     --radius: 0.5rem;
 
@@ -53,36 +67,45 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Gradients for Cosmic Effects */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--tertiary)) 100%);
+    --gradient-neural: linear-gradient(90deg, hsl(var(--primary) / 0.3) 0%, hsl(var(--secondary) / 0.3) 100%);
+    --gradient-aurora: linear-gradient(45deg, hsl(var(--primary) / 0.2), hsl(var(--secondary) / 0.2), hsl(var(--tertiary) / 0.2));
+
+    /* Glow Effects */
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.5);
+    --glow-secondary: 0 0 30px hsl(var(--secondary) / 0.5);
+    --glow-intense: 0 0 60px hsl(var(--primary) / 0.8);
+
+    /* Neural Network Animations */
+    --transition-neural: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.6s ease-in-out;
+
+    --radius: 0.75rem;
   }
 
+  /* Dark mode overrides (keeping same values since we're cosmic by default) */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 221 47% 3%;
+    --foreground: 203 100% 95%;
+    --card: 221 47% 6%;
+    --card-foreground: 203 100% 95%;
+    --popover: 221 47% 8%;
+    --popover-foreground: 203 100% 95%;
+    --primary: 203 100% 60%;
+    --primary-foreground: 221 47% 3%;
+    --secondary: 267 85% 60%;
+    --secondary-foreground: 221 47% 3%;
+    --muted: 221 47% 12%;
+    --muted-foreground: 203 50% 70%;
+    --accent: 267 85% 60%;
+    --accent-foreground: 221 47% 3%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 221 47% 3%;
+    --border: 203 100% 20%;
+    --input: 221 47% 8%;
+    --ring: 203 100% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +123,111 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, hsl(var(--tertiary) / 0.03) 0%, transparent 50%),
+                hsl(var(--background));
+  }
+
+  /* Cosmic background animation */
+  @keyframes cosmic-drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(0.5deg); }
+    50% { transform: translate(-1px, 2px) rotate(-0.5deg); }
+    75% { transform: translate(2px, 1px) rotate(0.2deg); }
+  }
+
+  /* Neural glow animations */
+  @keyframes neural-pulse {
+    0%, 100% { 
+      box-shadow: var(--glow-primary);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: var(--glow-intense);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes data-flow {
+    0% { transform: translateX(-100%) translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(100vw) translateY(-20px); opacity: 0; }
+  }
+
+  /* Floating particles */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Holographic shimmer */
+  @keyframes hologram {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+}
+
+@layer components {
+  /* Glowing button effects */
+  .btn-cosmic {
+    @apply relative overflow-hidden;
+    background: var(--gradient-cosmic);
+    transition: var(--transition-glow);
+  }
+
+  .btn-cosmic:hover {
+    animation: neural-pulse 2s infinite;
+    transform: translateY(-2px);
+  }
+
+  .btn-cosmic::before {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    content: '';
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--foreground) / 0.1) 50%, transparent 70%);
+    animation: hologram 2s infinite linear;
+  }
+
+  .btn-cosmic:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Neural network card */
+  .card-neural {
+    @apply relative backdrop-blur-xl;
+    background: linear-gradient(135deg, hsl(var(--card) / 0.8) 0%, hsl(var(--card) / 0.4) 100%);
+    border: 1px solid hsl(var(--border) / 0.5);
+    transition: var(--transition-neural);
+  }
+
+  .card-neural:hover {
+    border-color: hsl(var(--primary) / 0.8);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Cosmic input with data flow */
+  .input-cosmic {
+    @apply relative;
+    background: hsl(var(--input) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+    transition: var(--transition-neural);
+  }
+
+  .input-cosmic:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--glow-primary);
+  }
+
+  /* Floating particles */
+  .particles {
+    @apply absolute inset-0 pointer-events-none overflow-hidden;
+  }
+
+  .particle {
+    @apply absolute w-1 h-1 bg-primary rounded-full opacity-30;
+    animation: float 6s ease-in-out infinite;
   }
 }
